@@ -1,0 +1,223 @@
+@import url(lib/common.less);
+@import url(lib/global.less);
+@import url(lib/header.less);
+
+/*main style*/
+.main{
+	width: 990px;
+	margin: auto;
+	font-size: 1.4em;
+}
+
+.myAccount{
+	height: 244px;
+	margin-top: 123px;
+}
+
+.accountInfo{
+	float: left;
+	width: 480px;
+	border: 1px solid rgb(223,223,223);
+	background-color: #fff;
+
+	.myMoney-container{
+		width: 400px;
+		margin: auto;
+		margin-top: 10px;
+
+		.accounts{
+			height: 183px;
+			margin-top: 25px;
+
+			.accounts-l{
+				float: left;
+				height: 150px;
+				width: 150px;
+				&.chart {
+					position: relative;
+					text-align: center;
+					span {
+						display: inline-block;
+						line-height: 150px;
+						font-size: 1.6em;
+						z-index: 2;
+					}
+					canvas {
+						position: absolute;
+						top: 0;
+						left: 0;
+					}
+				}
+			}
+			.accounts-r{
+				float: right;
+				margin-right: 50px;
+				margin-top: 11px;
+					
+				ul li{
+					line-height: 2.4;
+
+					.buy{
+						padding: 2.5px 10px;
+						background-color: #e66e1e;
+						border-radius: 3px;
+						border: 1px solid #d85701;
+						color: white;
+						font-size: 0.9em;
+						cursor:pointer;
+						margin-left: 10px;
+					}
+
+					.detail{
+						color: #08C;
+						font-size: .9em;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+}
+
+.workRoom{
+	width: 480px;
+	height: 244px;
+	float: right;
+	border: 1px solid rgb(223,223,223);
+	background-color: #fff;
+
+	.workRoom-container{
+		width: 420px;
+		margin: auto;
+		margin-top: 10px;
+
+		.roomList{
+			margin-top: 30px;
+
+			ul li{
+				line-height: 2.5;
+
+				a{
+					cursor: pointer;
+					color:#08c;
+				}
+				.edit{
+					display: none;
+				}
+				&.hover .edit{
+					display: inline;
+				}
+				.help{
+					color: rgb(0,136,204);
+					cursor: pointer;
+				}
+
+				.enter{
+					padding: 2.5px 10px;
+					background-color: #869ef8;
+					border-radius: 3px;
+					border: 1px solid #6685f6;	
+					color: white;
+					font-size: .9em;
+					cursor:pointer;
+				}
+			}
+		}
+
+		.childRoom{
+			margin-left: 329px;
+			margin-top: 10px;
+			color: rgb(0,136,204);
+			cursor: pointer;
+		}
+	}
+}
+
+
+.recentUse{
+	
+	margin-top: 15px;
+	background-color: #fff;
+	border: 1px solid rgb(223,223,223);
+
+	.recentH{
+		height: 45px;
+		margin: auto;
+
+		.title{
+			float: left;
+			margin-left: 45px;
+			margin-top: 10px;
+		}
+	}
+
+	.recentF{
+
+		table{
+			width: 988px;
+
+			.table-t{
+				height: 30px;
+				background-color: #f1f1f1;
+				border-bottom: 1px solid rgb(223,223,223);
+
+				.roomName{
+					width: 190px;
+				}
+
+				.vedioTime{
+					width: 160px;
+				}
+
+				.persons{
+					width: 80px;
+				}
+
+				.backUrl{
+					width: 360px;
+				}
+			}
+
+			.table-v{
+				background-color: #f1f1f1;
+			}
+
+			tr{
+				height: 40px;
+				text-align: center;
+
+				.downloads{
+					color: rgb(0,136,204);
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
+
+/*footer style*/
+
+.footer{
+	height: 54px;
+	background-color: #333;
+	margin-top: 15px;
+
+	.footer-container{
+		width: 990px;
+		margin: auto;
+	}
+}
+
+
+/*clear*/
+._black{
+	height: 44px;
+}
+.page_num{
+	float: right;
+	margin: 8px 20px;
+	strong{
+		font-size: 1em;
+		color:#e66e1e;
+	}
+}
