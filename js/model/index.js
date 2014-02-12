@@ -4,8 +4,11 @@ define(function(require) {
 	var pager=require("../lib/util/pager/page");
 	pager.init({
 		parent:".pager",
-		current:11,
+		current:1,
 		item:10,
-		total:270
+		total:270,
+		selectChange:function(){
+			alert("");
+		}
 	});
 })
