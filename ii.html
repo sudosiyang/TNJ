@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<label for="">时间（小时）：<input type="text" id="time"></label>
+	<label for="">人数：<input type="text" id="num"></label>
+	<label for="">视频路数：<input type="text" id="lu"></label>
+	<input type="button" name="" value="计算" onclick="result()">
+	<table cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr class="firstRow">
+            <td colspan="11" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="695" height="37">
+                <p style="text-align:center;">
+                    <span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">特特区音视频互动系统报价方案</span>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="11" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="695" height="37">
+                <p>
+                    <span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">一、按照实际使用流量计费</span>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="96" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">购买流量</span>
+                </p>
+            </td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">单价（元</span><span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">/G</span><span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">）</span>
+                </p>
+            </td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">折扣</span>
+                </p>
+            </td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">总价（元）</span>
+                </p>
+            </td>
+            <td colspan="3" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="216" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">备注</span>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="96" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">100G</span>
+                </p>
+            </td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">58</span>
+                </p>
+            </td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">8</span><span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">折</span>
+                </p>
+            </td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">4640</span>
+                </p>
+            </td>
+            <td rowspan="4" colspan="3" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="216" height="111">
+                <p>
+                    <span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">单买流量价格：</span><span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">58</span><span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">元</span><span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">/G</span><span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">，如未用完，可退还未用流量的钱。套餐流量退还，按照使用流量的多少，属于哪个套餐来结算，而不按照当初购买的套餐价格结算。</span>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="96" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">200G</span>
+                </p>
+            </td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">58</span>
+                </p>
+            </td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">7</span><span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">折</span>
+                </p>
+            </td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">8120</span>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="96" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">500G</span>
+                </p>
+            </td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">58</span>
+                </p>
+            </td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">6</span><span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">折</span>
+                </p>
+            </td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">17400</span>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="96" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">1000G</span>
+                </p>
+            </td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">58</span>
+                </p>
+            </td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">5</span><span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">折</span>
+                </p>
+            </td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">29000</span>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="11" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="695" height="37">
+                <p>
+                    <span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">二、按照最大并发人数计费</span>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="96" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">购买点数</span>
+                </p>
+            </td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">单价（元</span><span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">/</span><span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">人</span><span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">/</span><span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">月）</span>
+                </p>
+            </td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">折扣</span>
+                </p>
+            </td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">总价（元）</span>
+                </p>
+            </td>
+            <td colspan="3" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="216" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">备注</span>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="96" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">N</span>
+                </p>
+            </td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">30</span><span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">元</span>
+                </p>
+            </td>
+            <td colspan="2" valign="top" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">_</span>
+                </p>
+            </td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24">
+                <p style="text-align:center;">
+                    <span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">30*N/</span><span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">月</span>
+                </p>
+            </td>
+            <td rowspan="4" colspan="3" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="216" height="111">
+                <p>
+                    <span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">一次性购买一年，将按买</span><span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">10</span><span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">个月送</span><span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">2</span><span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">个月，一次性购买二年，将按买</span><span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">24</span><span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">个月送</span><span style="font-family:Times;color:#000000;font-size: 12px; font-family: Times; letter-spacing: 0px;">6</span><span style="font-family:Songti SC;color:#000000;font-size: 12px; font-family: &#39;Songti SC&#39;; letter-spacing: 0px;">个月计算。</span>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="96" height="24"></td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24"></td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24"></td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24"></td>
+        </tr>
+        <tr>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="96" height="24"></td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24"></td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24"></td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24"></td>
+        </tr>
+        <tr>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="96" height="24"></td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24"></td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24"></td>
+            <td colspan="2" valign="middle" style="border-color: rgb(170, 170, 170); padding: 2px;" width="121" height="24"></td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <br/>
+</p>
+	<script>
+	function result () {
+		var time=document.getElementById("time").value;
+		var num=document.getElementById("num").value;
+		var lu=document.getElementById("lu").value;
+		alert("消费："+Math.floor(20*3600/1024/1024*time*num*lu*58)+"元;流量消耗："+Math.floor(20*3600/1024/1024*time*num*lu)+"G");
+	}
+	</script>
+</body>
+</html>
