@@ -18,11 +18,11 @@ define(function(require) {
 	});
 	pager.init({
 		parent: ".pager",
-		current: 1,
+		current: 11,
 		item: 10,
 		total: 270,
 		selectChange: function() {
-			this.current
+			console.log(this.current);
 		}
 	});
 	pop.dialog({

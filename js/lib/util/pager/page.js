@@ -49,9 +49,20 @@ define(function(require, exports) {
 		return data ? func(data) : func;
 	};
 
+	//对外接口
+	var API=(function(){
+		return{
+			current:"1",
+			setCurrent:function(_current){
+				this.current=_current;
+			}
+		}
+	})();
+
 	function linkClick() {
 		$("body").on('click', '.autoPager a', function(event) {
 			event.preventDefault();
+			if($(this).hasClass('current')) return;
 			if (!isNaN($(this).text())) {
 				current = $(this).text();
 			} else {
@@ -62,15 +73,17 @@ define(function(require, exports) {
 					current++;
 				}
 			}
+			API.setCurrent(current);
 			drawLink();
-			fn();
+			fn.call(API);
 		});
 	}
-
+	//绘制
 	function drawLink() {
 		var temp = "";
 		$(parent).empty();
 		if (total <= 1) return;
+		//小于显示数量
 		if (numPages() < display_num) {
 
 			for (var i = 1; i <= numPages(); i++) {
@@ -81,6 +94,7 @@ define(function(require, exports) {
 				}
 			};
 		} else {
+			//剩余页少于显示页
 			if (numPages() - current < display_num) {
 				var te=[];
 				for (var i = numPages(); i > numPages() - display_num; i--) {
