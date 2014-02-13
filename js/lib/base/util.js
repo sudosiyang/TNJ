@@ -88,10 +88,12 @@ define(function(require, exports) {
 	/******************************
 	 * 复制到文字剪切板
 	 ******************************/
-	exports.copy = function(btn, text_con, a_fn, path) {
+	exports.copy = function(btn, text_con, a_fn) {
 		//避免重复创建
 		if ($(btn).next().attr("class") == "zclip") return false;
-		var _path = path ? path : 'js/res/copy.swf';
+
+		var path=require.resolve("../util/copy/copy");
+		var _path = path.split("js/")[0]+'js/res/copy.swf';
 		//初始化
 		require.async("../util/copy/copy", function() {
 			$(btn).zclip({

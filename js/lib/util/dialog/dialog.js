@@ -15,7 +15,6 @@ define(function(require, exports) {
 	 * @cancelVal "取消按钮"文字
 	 * @copy  复制按钮，复制文字
 	 * @copy_target 复制目标默认.textarea
-	 * @swf_path 路径
 	 * @width   设置消息内容宽度，可以带单位。一般不需要设置此，对话框框架会自己适应内容。
 				如果设置为百分值单位，将会以根据浏览器可视范围作为基准，此时如果浏览器窗口大小被改变其也会进行相应的调整
 	 * @height  设置消息内容高度，可以带单位。不建议设置此，而应该让内容自己撑开高度。
@@ -50,7 +49,7 @@ define(function(require, exports) {
 				var _target=option.copy_target?option.copy_target:".textarea";
 				tool.copy(".box-footer a.box-copy", ".box-body "+_target, function() {
 					option.copy();
-				},option.path);
+				});
 			}
 		}
 		if (option.ok) {

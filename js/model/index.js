@@ -3,6 +3,7 @@ define(function(require) {
 	var tool = require("../lib/base/util")
 	var pager = require("../lib/util/pager/page");
 	var pop = require("../lib/util/dialog/dialog");
+	var suggest = require("../lib/util/suggest/suggester");
 	require.async("../lib/util/pieChart/chart", function() {
 		$('.chart').easyPieChart({
 			easing: 'easeOutBounce',
@@ -16,6 +17,7 @@ define(function(require) {
 			scaleColor: false
 		});
 	});
+	tool.copy("h2","h1",function(){alert()});
 	pager.init({
 		parent: ".pager",
 		current: 1,
@@ -26,5 +28,8 @@ define(function(require) {
 			console.log(this.current);
 		}
 	});
-	
+	suggest.init({
+		target:"#inputDate",
+		suggest:["@163.com","@gmail.com","@qq.com"]
+	});
 })
