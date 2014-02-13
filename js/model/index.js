@@ -30,6 +30,6 @@ define(function(require) {
 	});
 	suggest.init({
 		target:"#inputDate",
-		suggest:["@163.com","@gmail.com","@qq.com"]
+		suggest:["","@163.com","@gmail.com","@qq.com","@111.com","@tetequ.com"]
 	});
 })
