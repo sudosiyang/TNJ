@@ -18,19 +18,13 @@ define(function(require) {
 	});
 	pager.init({
 		parent: ".pager",
-		current: 11,
-		item: 10,
+		current: 1,
+		item: 100,
 		total: 270,
+		display_num:4,
 		selectChange: function() {
 			console.log(this.current);
 		}
 	});
-	pop.dialog({
-		title:"sdsads",
-		content:$("h2"),
-		copy:function(){
-			alert();
-		},
-		copy_target:"h2"
-	});
+	
 })

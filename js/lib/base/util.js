@@ -120,8 +120,8 @@ define(function(require, exports) {
      * 解析模版tpl。当data未传入时返回编译结果函数；当某个template需要多次解析时，建议保存编译结果函数，然后调用此函数来得到结果。
      * 
      * @method parseTpl
-     * @grammar $.parseTpl(str, data)  ⇒ string
-     * @grammar $.parseTpl(str)  ⇒ Function
+     * @grammar parseTpl(str, data)  ⇒ string
+     * @grammar parseTpl(str)  ⇒ Function
      * @param {String} str 模板
      * @param {Object} data 数据
      * @example var str = "<p><%=name%></p>",

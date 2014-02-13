@@ -4,12 +4,13 @@ define(function(require, exports) {
 		current
 		item
 		total
+		display_num
 		selectChange
 	*
 	**/
 
 	require("../../../res/css/pager.css");
-	var total, parent, current, per_item, display_num = 7,
+	var total, parent, current, per_item, display_num,
 		fn;
 	var templ = "<div class='autoPager'><a class='pre'>上一页</a><%=item%><a class='next'>下一页</a></div>";
 
@@ -17,8 +18,9 @@ define(function(require, exports) {
 		total = option.total;
 		parent = option.parent;
 		current = option.current ? option.current : 1;
-		per_item = option.per_item ? option.per_item : 10;
+		per_item = option.item ? option.item : 10;
 		fn = option.selectChange;
+		display_num=option.display_num?option.display_num:7;
 		drawLink();
 		linkClick();
 	}
