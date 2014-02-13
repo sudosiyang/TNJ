@@ -14,6 +14,8 @@ define(function(require, exports) {
 			   对话框标题栏的关闭按钮其实就是取消按钮，只不过视觉不同罢了，点击同样触发cancel事件
 	 * @cancelVal "取消按钮"文字
 	 * @copy  复制按钮，复制文字
+	 * @copy_target 复制目标默认.textarea
+	 * @swf_path 路径
 	 * @width   设置消息内容宽度，可以带单位。一般不需要设置此，对话框框架会自己适应内容。
 				如果设置为百分值单位，将会以根据浏览器可视范围作为基准，此时如果浏览器窗口大小被改变其也会进行相应的调整
 	 * @height  设置消息内容高度，可以带单位。不建议设置此，而应该让内容自己撑开高度。
@@ -24,8 +26,8 @@ define(function(require, exports) {
 
 
 
-	require("../../css/xbox.css");
-	var tool = require("../lib/tool")
+	require("../../../res/css/xbox.css");
+	var tool = require("../../base/util")
 	var template = '<div class="tetequ-box"><div class="ui-mask"></div><div class="ui-box"><a href="" class="box-close">x</a><div class="box-content"><div class="box-title"><h2 class="box-title-name"></h2></div><div class="box-body"></div><div class="box-footer clearfix"></div></div></div></div>';
 	var _width, _height, _top, _left, option, id;
 
@@ -45,13 +47,10 @@ define(function(require, exports) {
 		if (option.copy) {
 			$(".box-footer").append(tool.stringCat('<a class="box-copy data-trigger="" data-placement="left" data-original-title="复制成功"">%%</a>', '复制')).show();
 			if (typeof(option.copy) == "function") {
-				tool.copy(".box-footer a.box-copy", ".box-body .textarea", function() {
+				var _target=option.copy_target?option.copy_target:".textarea";
+				tool.copy(".box-footer a.box-copy", ".box-body "+_target, function() {
 					option.copy();
-				})
-			} else {
-				tool.copy(".box-footer a.box-copy", ".box-body " + option.copy[0], function() {
-					option.copy[1]();
-				})
+				},option.path);
 			}
 		}
 		if (option.ok) {
