@@ -62,7 +62,7 @@ define(function(require, exports) {
 	})();
 
 	function linkClick() {
-		$("body").on('click', '.autoPager a', function(event) {
+		$("body").on('click', parent+' .autoPager a', function(event) {
 			event.preventDefault();
 			if($(this).hasClass('current')) return;
 			if (!isNaN($(this).text())) {
@@ -84,7 +84,7 @@ define(function(require, exports) {
 	function drawLink() {
 		var temp = "";
 		$(parent).empty();
-		if (total <= 1) return;
+		if (numPages() <= 1) return;
 		//小于显示数量
 		if (numPages() < display_num) {
 
@@ -134,10 +134,10 @@ define(function(require, exports) {
 			"item": temp
 		}));
 		if (current == 1) {
-			$(".autoPager .pre").addClass('disable');
+			$(parent).find(".pre").addClass('disable');
 		}
 		if (current == numPages()) {
-			$(".autoPager .next").addClass('disable');
+			$(parent).find(".next").addClass('disable');
 		}
 	}
 	exports.init = init;
