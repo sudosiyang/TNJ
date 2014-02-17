@@ -19,7 +19,7 @@ define(function(require) {
 		});
 	});
 	tool.copy("h2","h1",function(){alert()});
-	/*pager.init({
+	pager.init({
 		parent: ".pager",
 		current: 1,
 		item: 100,
@@ -28,17 +28,18 @@ define(function(require) {
 		selectChange: function() {
 			console.log(this.current);
 		}
-	});*/
+	});
+	pager.render(870);
 	suggest.init({
 		target:"#inputDate",
 		suggest:["","@163.com","@gmail.com","@qq.com","@111.com","@tetequ.com"]
 	});
-	item.init({
+	/*item.init({
 		parent:".table",
 		item:{"ider":"ddd","ddd":"weqwe"},
 		data:[{"ider":"12","ddd":"dasd"},{"ider":"1222","ddd":"da3sd"},{"ider":"1tt2","ddd":"dasd"},{"ider":"1tt2","ddd":"dasd"},{"ider":"122t2","ddd":"da3sd"},{"ider":"12","ddd":"dasd"},{"ider":"12","ddd":"dasd"},{"ider":"1222","ddd":"da3sd"},{"ider":"12","ddd":"dasd"},{"ider":"12","ddd":"dasd"},{"ider":"1222","ddd":"da3sd"},{"ider":"12","ddd":"dasd"},{"ider":"1222","ddd":"da3sd"},{"ider":"12","ddd":"dasd"},{"ider":"1222","ddd":"da3sd"}],
 		pager:true,
 		per_item:3,
 		display_num:3
-	});
+	});*/
 })

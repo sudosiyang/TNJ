@@ -60,7 +60,10 @@ define(function(require, exports) {
 			}
 		}
 	})();
-
+	function render(data){
+		total=data;
+		drawLink();
+	}
 	function linkClick() {
 		$("body").on('click', parent+' .autoPager a', function(event) {
 			event.preventDefault();
@@ -141,5 +144,6 @@ define(function(require, exports) {
 		}
 	}
 	exports.init = init;
+	exports.render=render;
 
 });
