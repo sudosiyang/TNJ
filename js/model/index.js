@@ -43,6 +43,7 @@ define(function(require) {
 			console.log(this.value);
 		}
 	});
+	slider.setValue(75);
 	/*item.init({
 		parent:".table",
 		item:{"ider":"ddd","ddd":"weqwe"},

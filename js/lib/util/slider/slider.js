@@ -1,5 +1,5 @@
 define(function(require, exports) {
-	var _position, _parent, _min, _max, _width,_thum_with;
+	var _position, _parent, _min, _max, _width, _thum_with;
 	require("../../../res/css/slider.css");
 
 	function init(option) {
@@ -7,7 +7,7 @@ define(function(require, exports) {
 		_min = option.min ? option.min : 0;
 		_max = option.max ? option.max : 100;
 		_position = option.position ? option.position : 0;
-		_width = option.width ? option._width : 160;
+		_width = option.width ? option.width : 160;
 		_onchange = option.onChange;
 		createUI();
 		eventBind();
@@ -15,7 +15,7 @@ define(function(require, exports) {
 
 	function createUI() {
 		$(_parent).append('<div class="_slider"><div class="_mover"></div><div class="_cover"></div><div class="_traker"></div></div>').find("._slider").width(_width);
-		_thum_width=$( _parent+" ._mover").width();
+		_thum_width = $(_parent + " ._mover").width();
 	}
 
 	function eventBind() {
@@ -28,7 +28,7 @@ define(function(require, exports) {
 				$("._mover").css({
 					'left': moveX
 				})
-				$("._cover").width(moveX + _thum_width/2).parent().css({
+				$("._cover").width(moveX + _thum_width / 2).parent().css({
 					"cursor": "default"
 				});
 				API.setValue(moveX);
@@ -38,13 +38,13 @@ define(function(require, exports) {
 		}).on("mouseup", "._mover", function() {
 			$(document).off('mousemove');
 		}).on('click', '._traker,._cover', function(event) {
-			moveX=event.offsetX-_thum_width/2;
-			if(moveX<0) moveX=0;
-			if(moveX>$("._slider").width()-_thum_width) moveX=$("._slider").width()-_thum_width;
+			moveX = event.offsetX - _thum_width / 2;
+			if (moveX < 0) moveX = 0;
+			if (moveX > $("._slider").width() - _thum_width) moveX = $("._slider").width() - _thum_width;
 			$("._mover").css({
 				'left': moveX
 			})
-			$("._cover").width(moveX + _thum_width/2).parent().css({
+			$("._cover").width(moveX + _thum_width / 2).parent().css({
 				"cursor": "default"
 			});
 			API.setValue(moveX);
@@ -60,5 +60,17 @@ define(function(require, exports) {
 			}
 		}
 	})();
+
+	function setValue(value) {
+		left = (value - _min) / (_max - _min) * (_width - _thum_width);
+		$("._mover").css({
+			'left': left
+		})
+		$("._cover").width(left + left / 2).parent().css({
+			"cursor": "default"
+		});
+		API.value=value;
+	}
 	exports.init = init;
+	exports.setValue=setValue;
 });
