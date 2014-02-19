@@ -1,10 +1,11 @@
 define(function(require) {
 	require("../lib/base/jquery");
 	var tool = require("../lib/base/util")
-	var pager = require("../lib/util/pager/page");
+	//var pager = require("../lib/util/pager/page");
 	var pop = require("../lib/util/dialog/dialog");
 	var item = require("../lib/util/item/item");
 	var suggest = require("../lib/util/suggest/suggester");
+	var slider =require("../lib/util/slider/slider")
 	require.async("../lib/util/pieChart/chart", function() {
 		$('.chart').easyPieChart({
 			easing: 'easeOutBounce',
@@ -19,7 +20,7 @@ define(function(require) {
 		});
 	});
 	tool.copy("h2","h1",function(){alert()});
-	pager.init({
+	/*pager.init({
 		parent: ".pager",
 		current: 1,
 		item: 100,
@@ -29,10 +30,18 @@ define(function(require) {
 			console.log(this.current);
 		}
 	});
-	pager.render(870);
+	pager.render(870);*/
 	suggest.init({
 		target:"#inputDate",
 		suggest:["","@163.com","@gmail.com","@qq.com","@111.com","@tetequ.com"]
+	});
+	slider.init({
+		parent:".slider",
+		min:20,
+		max:200,
+		onChange:function(){
+			console.log(this.value);
+		}
 	});
 	/*item.init({
 		parent:".table",
