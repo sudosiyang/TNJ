@@ -91,7 +91,7 @@ define(function(require, exports) {
 	exports.copy = function(btn, text_con, a_fn) {
 		//避免重复创建
 		if ($(btn).next().attr("class") == "zclip") return false;
-
+		
 		var path=require.resolve("../util/copy/copy");
 		var _path = path.split("js/")[0]+'js/res/copy.swf';
 		//初始化

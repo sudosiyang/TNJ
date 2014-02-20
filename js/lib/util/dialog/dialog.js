@@ -39,16 +39,16 @@ define(function(require, exports) {
 	}
 
 	function createBtn() {
-		
+
 		if (option.cancel) {
 			$(".box-footer").append(tool.stringCat('<a class="box-cancle">%%</a>', option.cancelVal || '取消')).show();
 		}
 		if (option.copy) {
-			$(".box-footer").append(tool.stringCat('<a class="box-copy data-trigger="" data-placement="left" data-original-title="复制成功"">%%</a>', '复制')).show();
+			$(".box-footer").append(tool.stringCat('<a class="box-copy" data-trigger="" data-placement="left" data-original-title="复制成功"">%%</a>', '复制')).show();
 			if (typeof(option.copy) == "function") {
-				var _target=option.copy_target?option.copy_target:".textarea";
-				tool.copy(".box-footer a.box-copy", ".box-body "+_target, function() {
-					option.copy();
+				var _target = option.copy_target ? option.copy_target : ".textarea";
+				tool.copy(".box-footer a.box-copy", ".box-body " + _target, function() {
+					option.copy.call(api);
 				});
 			}
 		}
@@ -76,10 +76,7 @@ define(function(require, exports) {
 				$(".box-body").append(htmlEncode(option.content));
 			}
 			if (typeof(option.content) == "object") {
-				$(".box-body").append(option.content.clone(true));
-				option.content.css({
-					"margin": "0 auto"
-				}).show();
+				$(".box-body").append(option.content.clone(true).show());
 			}
 		}
 		if (option.drag) {
@@ -140,6 +137,12 @@ define(function(require, exports) {
 				setTimeout(function() {
 					_this.close();
 				}, val);
+			},
+			tip: function() {
+				require.async("../tooltip/tip", function() {
+					$(".box-copy").tooltip("show");
+				});
+
 			}
 		}
 	})();

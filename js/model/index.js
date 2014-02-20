@@ -5,7 +5,7 @@ define(function(require) {
 	var pop = require("../lib/util/dialog/dialog");
 	var item = require("../lib/util/item/item");
 	var suggest = require("../lib/util/suggest/suggester");
-	var slider =require("../lib/util/slider/slider")
+	var slider = require("../lib/util/slider/slider")
 	require.async("../lib/util/pieChart/chart", function() {
 		$('.chart').easyPieChart({
 			easing: 'easeOutBounce',
@@ -19,7 +19,9 @@ define(function(require) {
 			scaleColor: false
 		});
 	});
-	tool.copy("h2","h1",function(){alert()});
+	tool.copy("h2", "h1", function() {
+		alert()
+	});
 	/*pager.init({
 		parent: ".pager",
 		current: 1,
@@ -31,15 +33,25 @@ define(function(require) {
 		}
 	});
 	pager.render(870);*/
+	pop.dialog({
+		title: "这是一个测试",
+		content: $(".con"),
+		ok: function() {
+			alert();
+		},
+		copy: function() {
+			this.tip();
+		}
+	})
 	suggest.init({
-		target:"#inputDate",
-		suggest:["","@163.com","@gmail.com","@qq.com","@111.com","@tetequ.com"]
+		target: "#inputDate",
+		suggest: ["", "@163.com", "@gmail.com", "@qq.com", "@111.com", "@tetequ.com"]
 	});
 	slider.init({
-		parent:".slider",
-		min:20,
-		max:200,
-		onChange:function(){
+		parent: ".slider",
+		min: 20,
+		max: 200,
+		onChange: function() {
 			console.log(this.value);
 		}
 	});

@@ -1,12 +1,20 @@
+/**
+* 滑动条插件
+* @parent 插件生成的节点
+* @min 最小刻度
+* @max 最大刻度
+* @width 插件长度	
+* @onChange change事件
+**/
+
 define(function(require, exports) {
-	var _position, _parent, _min, _max, _width, _thum_with;
+	var  _parent, _min, _max, _width, _thum_with;
 	require("../../../res/css/slider.css");
 
 	function init(option) {
 		_parent = option.parent;
 		_min = option.min ? option.min : 0;
 		_max = option.max ? option.max : 100;
-		_position = option.position ? option.position : 0;
 		_width = option.width ? option.width : 160;
 		_onchange = option.onChange;
 		createUI();
