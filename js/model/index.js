@@ -1,6 +1,7 @@
 define(function(require) {
 	require("../lib/base/jquery");
-	var tool = require("../lib/base/util")
+	var tool = require("../lib/base/util");
+	require("../lib/util/calendar/datepicker")
 	//var pager = require("../lib/util/pager/page");
 	var pop = require("../lib/util/dialog/dialog");
 	var item = require("../lib/util/item/item");
@@ -19,8 +20,8 @@ define(function(require) {
 			scaleColor: false
 		});
 	});
-	tool.copy("h2", "h1", function() {
-		alert()
+	tool.copy(".copy", ".word", function() {
+		alert("复制成功！");
 	});
 	/*pager.init({
 		parent: ".pager",
@@ -33,6 +34,24 @@ define(function(require) {
 		}
 	});
 	pager.render(870);*/
+
+
+	$('.inputDate').DatePicker({
+		format: 'Y-m-d',
+		date: $('.inputDate').val(),
+		current: $('.inputDate').val(),
+		starts: 1,
+		position: 'bottom',
+		onBeforeShow: function() {
+			$('.inputDate').DatePickerSetDate($('.inputDate').val(), true);
+		},
+		onChange: function(formated, dates) {
+			$('.inputDate').val(formated);
+		}
+	});
+
+
+
 	pop.dialog({
 		title: "这是一个测试",
 		content: $(".con"),

@@ -6,8 +6,8 @@ define(function(require, exports) {
 	function init(option) {
 		parent = option.target;
 		array = option.suggest;
-		$(parent).after("<div class='sug'></div>");
-		$(".sug").hide();
+		$(parent).after("<div class='_sug'></div>");
+		$("._sug").hide();
 		ui_event();
 	}
 
@@ -24,19 +24,19 @@ define(function(require, exports) {
 				}
 			});
 		}
-		$(".sug").empty().append(html).show();
+		$("._sug").empty().append(html).show();
 	}
 
 	function ui_event() {
-		$("body").on('mouseenter', '.sug div', function(event) {
+		$("body").on('mouseenter', '._sug div', function(event) {
 			current = $(this).attr("attr");
-			$(".sug div").removeClass('selected').eq(current).addClass('selected');
-		}).on('mouseleave', '.sug div', function(event) {
+			$("._sug div").removeClass('selected').eq(current).addClass('selected');
+		}).on('mouseleave', '._sug div', function(event) {
 			current = $(this).attr("attr");
-			$(".sug div").removeClass('selected').eq(current).addClass('selected');
-		}).on('click', '.sug div', function(event) {
+			$("._sug div").removeClass('selected').eq(current).addClass('selected');
+		}).on('click', '._sug div', function(event) {
 			$(parent).val($(this).text());
-			$(".sug").hide();
+			$("._sug").hide();
 		});
 		$(parent).focusin(function(event) {
 			var _this = $(this);
@@ -61,7 +61,7 @@ define(function(require, exports) {
 		}).focusout(function(event) {
 			$("body").off('keyup');
 			setTimeout(function() {
-				$(".sug").hide();
+				$("._sug").hide();
 			},100);
 		});
 
@@ -73,7 +73,7 @@ define(function(require, exports) {
 		} else {
 			current--;
 		}
-		$(".sug div").removeClass('selected').eq(current).addClass('selected');
+		$("._sug div").removeClass('selected').eq(current).addClass('selected');
 	}
 
 	function down() {
@@ -82,12 +82,12 @@ define(function(require, exports) {
 		} else {
 			current++;
 		}
-		$(".sug div").removeClass('selected').eq(current).addClass('selected');
+		$("._sug div").removeClass('selected').eq(current).addClass('selected');
 	}
 
 	function enter() {
-		$(parent).val($(".sug .selected").text());
-		$(".sug").hide();
+		$(parent).val($("._sug .selected").text());
+		$("._sug").hide();
 	}
 
 	exports.init = init;
