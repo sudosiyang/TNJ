@@ -70,11 +70,13 @@ define(function(require, exports) {
 	})();
 
 	function setValue(value) {
+		value=value<_min?_min:value;
+		value=value>_max?_max:value;
 		left = (value - _min) / (_max - _min) * (_width - _thum_width);
 		$("._mover").css({
 			'left': left
 		})
-		$("._cover").width(left + left / 2).parent().css({
+		$("._cover").width(left + _thum_width / 2).parent().css({
 			"cursor": "default"
 		});
 		API.value = value;
