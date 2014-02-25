@@ -125,6 +125,7 @@ define(function(require, exports) {
 	}
 
 	//对外接口
+	var flag;
 	var api = (function() {
 		return {
 			close: function() {
@@ -140,7 +141,12 @@ define(function(require, exports) {
 			},
 			tip: function() {
 				require.async("../tooltip/tip", function() {
-					$(".box-copy").tooltip("show");
+					flag = setInterval(function() {
+						if ($.fn.tooltip) {
+							$(".box-copy").tooltip("show");
+							clearInterval(flag);
+						}
+					}, 100);
 				});
 
 			}
