@@ -62,7 +62,7 @@ define(function(require, exports) {
 			$("body").off('keyup');
 			setTimeout(function() {
 				$("._sug").hide();
-			},100);
+			},500);
 		});
 
 	}
