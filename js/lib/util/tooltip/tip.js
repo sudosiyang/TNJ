@@ -1,3 +1,10 @@
+/**
+ * ------------------------------------------
+ * 提示工具实现文件
+ * @version  2.2.3
+ * @author   susu(744276721@qq.com)
+ * ------------------------------------------
+ **/
 define(function(require) {
 	require("../../../res/css/tip.css");
 	require.async("../../base/jquery",function(){

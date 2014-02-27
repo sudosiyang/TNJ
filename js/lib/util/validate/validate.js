@@ -1,6 +1,13 @@
+/**
+ * ------------------------------------------
+ * 表单验证封装实现文件
+ * @version  1.3.2
+ * @author   susu(744276721@qq.com)
+ * ------------------------------------------
+ **/
 define(function(require, exports) {
 	require("../tooltip/tip");
-
+	var flag = true;
 	exports.init=function() {
 		$("form").on("click", ".tooltip", function() {
 			$(this).prev().tooltip("destroy")

@@ -1,3 +1,10 @@
+/**
+ * ------------------------------------------
+ * cookie操作
+ * @version  3.2.1
+ * @author   susu(744276721@qq.com)
+ * ------------------------------------------
+ **/
 (function (factory) {
 	if (typeof define === 'function' && define.amd) {
 		// AMD. Register as anonymous module.

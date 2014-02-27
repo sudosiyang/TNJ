@@ -1,14 +1,11 @@
+/**
+ * ------------------------------------------
+ * 分页控件实现文件
+ * @version  1.2.1
+ * @author   susu(744276721@qq.com)
+ * ------------------------------------------
+ **/
 define(function(require, exports) {
-	/**
-	*   parent
-		current
-		item
-		total
-		display_num
-		selectChange
-	*
-	**/
-
 	require("../../../res/css/pager.css");
 	var total, parent, current, per_item, display_num,
 		fn;

@@ -1,3 +1,10 @@
+/**
+ * ------------------------------------------
+ * 集合工具类
+ * @version  1.3.1
+ * @author   susu(744276721@qq.com)
+ * ------------------------------------------
+ **/
 define(function(require, exports) {
 
 	/******************************
@@ -19,7 +26,6 @@ define(function(require, exports) {
 	/******************************
 	 * 表单验证
 	 ******************************/
-	var flag = true;
 	exports.validate = function() {
 		require.async("../util/validate/validate", function(v) {
 			v.init();
