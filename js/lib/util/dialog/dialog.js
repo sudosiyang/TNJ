@@ -168,7 +168,7 @@ define(function(require, exports) {
 			event.preventDefault();
 			api.close();
 		}).on("keyup", function(e) {
-			if (e.keyCode) {
+			if (e.keyCode==27) {
 				api.close();
 			}
 		}).on('click', $selecter, function(event) {
