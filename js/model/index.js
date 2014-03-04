@@ -34,7 +34,7 @@ define(function(require) {
 		}
 	});
 	pager.render(870);*/
-
+	tool.validate();
 
 	$('.inputDate').DatePicker({
 		format: 'Y-m-d',
@@ -52,7 +52,7 @@ define(function(require) {
 
 
 
-	pop.dialog({
+	/*pop.dialog({
 		title: "这是一个测试",
 		content: $(".con"),
 		ok: function() {
@@ -61,7 +61,7 @@ define(function(require) {
 		copy: function() {
 			this.tip();
 		}
-	})
+	})*/
 	suggest.init({
 		target: "#inputDate",
 		suggest: ["", "@163.com", "@gmail.com", "@qq.com", "@111.com", "@tetequ.com"]

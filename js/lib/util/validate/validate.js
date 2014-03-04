@@ -7,12 +7,12 @@
  **/
 define(function(require, exports) {
 	require("../tooltip/tip");
-	var flag = false;
+	var flag;
 	exports.init = function() {
 		$("form").on("click", ".tooltip", function() {
 			$(this).prev().tooltip("destroy")
 		});
-		$('form input[type!=checkbox]:visible').blur(function(event) {
+		$('form input[type!=checkbox]:visible').focusout(function(event) {
 			if (!$(this).parent().attr("v")) {
 				//不为空
 				if (!$(this).val()) {
@@ -60,17 +60,16 @@ define(function(require, exports) {
 
 		$("form").submit(function(event) {
 			if (flag) {
-				$("input").blur();
+				$('input').focusout();
 				if ($(".tooltip").length > 0) {
-					return !1;
+					return false;
 				} else {
-					flag = !0;
+					$("input[type=submit]").val("正在提交...");
+					flag = false;
 				}
-				if (!flag)
-					return !1;
-				$("input[type=submit]").val("正在提交...");
-				flag = !1;
-			}
+			} else {
+				return false;
+			};
 		});
 	}
 });

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-</head>
+	<meta charset="utf-8"></head>
 <body>
 	<div class="fortext" id="text">
 		<input class='inputDate' value='2014-11-21'/>
@@ -24,10 +23,30 @@
 	<div class="word">这是要被复制的内容</div>
 	<a href="#" class="copy">复制</a>
 
-	<div class="slider" style="margin-left:110px">
-	</div>
+	<div class="slider" style="margin-left:110px"></div>
+	<form action=''>
+		邮箱验证:
+		<div min='2' max='11' reg='^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$' data-trigger='' data-placement='right'>
+			<input />
+		</div>
+		<div>
+			<input type='submit'  value='确定'/>
+		</div>
+	</form>
 	<textarea name="" id="" cols="30" rows="10"></textarea>
 	<script type="text/javascript" src="js/sea.js"></script>
 	<script type="text/javascript">seajs.use("model/index");</script>
+	<style type="text/css">
+		body{
+	width:980px;
+  	margin: 50px auto;
+}
+form{
+	width:200px;
+}
+input{
+	width:100%;
+}
+	</style>
 </body>
 </html>
