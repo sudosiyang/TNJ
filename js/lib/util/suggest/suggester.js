@@ -1,3 +1,10 @@
+/**
+ * ------------------------------------------
+ * 建议提示工具
+ * @version  0.3.1
+ * @author   susu(744276721@qq.com)
+ * ------------------------------------------
+ **/
 define(function(require, exports) {
 	require("../../../res/css/suggester.css");
 
@@ -62,7 +69,7 @@ define(function(require, exports) {
 			$("body").off('keyup');
 			setTimeout(function() {
 				$("._sug").hide();
-			},100);
+			},500);
 		});
 
 	}

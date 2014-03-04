@@ -1,14 +1,13 @@
 /**
-* 滑动条插件
-* @parent 插件生成的节点
-* @min 最小刻度
-* @max 最大刻度
-* @width 插件长度	
-* @onChange change事件
-**/
+ * ------------------------------------------
+ * 滑块控制封装文件
+ * @version  1.0.3
+ * @author   susu(744276721@qq.com)
+ * ------------------------------------------
+ **/
 
 define(function(require, exports) {
-	var  _parent, _min, _max, _width, _thum_with;
+	var _parent, _min, _max, _width, _thum_with;
 	require("../../../res/css/slider.css");
 
 	function init(option) {
@@ -43,7 +42,7 @@ define(function(require, exports) {
 				if (typeof(_onchange) == "function")
 					_onchange.call(API);
 			})
-		}).on("mouseup", "._mover", function() {
+		}).on("mouseup", function() {
 			$(document).off('mousemove');
 		}).on('click', '._traker,._cover', function(event) {
 			moveX = event.offsetX - _thum_width / 2;
@@ -70,15 +69,19 @@ define(function(require, exports) {
 	})();
 
 	function setValue(value) {
+		value=value<_min?_min:value;
+		value=value>_max?_max:value;
 		left = (value - _min) / (_max - _min) * (_width - _thum_width);
 		$("._mover").css({
 			'left': left
 		})
-		$("._cover").width(left + left / 2).parent().css({
+		$("._cover").width(left + _thum_width / 2).parent().css({
 			"cursor": "default"
 		});
-		API.value=value;
+		API.value = value;
+		if (typeof(_onchange) == "function")
+			_onchange.call(API);
 	}
 	exports.init = init;
-	exports.setValue=setValue;
+	exports.setValue = setValue;
 });

@@ -1,3 +1,11 @@
+/**
+ * ------------------------------------------
+ * 窗口控件
+ * @version  2.0.3
+ * @author   susu(744276721@qq.com)
+ * ------------------------------------------
+ **/
+ 
 define(function(require, exports) {
 	/*!Extend jquery.js*/
 	/**
@@ -125,6 +133,7 @@ define(function(require, exports) {
 	}
 
 	//对外接口
+	var flag;
 	var api = (function() {
 		return {
 			close: function() {
@@ -140,7 +149,12 @@ define(function(require, exports) {
 			},
 			tip: function() {
 				require.async("../tooltip/tip", function() {
-					$(".box-copy").tooltip("show");
+					flag = setInterval(function() {
+						if ($.fn.tooltip) {
+							$(".box-copy").tooltip("show");
+							clearInterval(flag);
+						}
+					}, 100);
 				});
 
 			}
@@ -154,7 +168,7 @@ define(function(require, exports) {
 			event.preventDefault();
 			api.close();
 		}).on("keyup", function(e) {
-			if (e.keyCode) {
+			if (e.keyCode==27) {
 				api.close();
 			}
 		}).on('click', $selecter, function(event) {

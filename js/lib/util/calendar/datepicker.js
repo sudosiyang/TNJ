@@ -1,3 +1,10 @@
+/**
+ * ------------------------------------------
+ * 日期控件
+ * @version  1.0
+ * @author   susu(744276721@qq.com)
+ * ------------------------------------------
+ **/
 define(function(require) {
 	(function($) {
 		var DatePicker = function() {
