@@ -1,10 +1,14 @@
-/**
- * ------------------------------------------
- * 滑块控制封装文件
- * @version  1.0.3
- * @author   susu(744276721@qq.com)
- * ------------------------------------------
- **/
+/** 
+* 滑块控制封装文件
+* @class slider
+* @param {Number} [parent] - 插件生成容器（节点）
+* @param {string} [somebody] - Somebody's name.
+* @param {string} [somebody=John Doe] - Somebody's name.
+* @desc  滑块控制组件
+* @author susu(744276721@qq.com) 
+* @version  1.0.3
+*/ 
+
 
 define(function(require, exports) {
 	var _parent, _min, _max, _width, _thum_with;
