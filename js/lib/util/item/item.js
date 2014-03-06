@@ -9,7 +9,7 @@ define(function(require, exports) {
 
 	require("../../../res/css/item.css");
 
-	var data, item_array, parent, per_item, pager_position,_display_num
+	var data, item_array, parent, per_item, pager_position, _display_num,
 		temp = "";
 
 	function init(option) {
@@ -18,13 +18,14 @@ define(function(require, exports) {
 		item_array = option.item;
 		if (option.pager) {
 			per_item = option.per_item ? option.per_item : 4;
-			pager_position=option.pager_position?option.pager_position:"bot";
-			_display_num=option.display_num?option.display_num:5;
+			pager_position = option.pager_position ? option.pager_position : "bot";
+			_display_num = option.display_num ? option.display_num : 5;
 		}
 		render();
 	}
 
 	function render() {
+		temp = "";
 		var header = "",
 			index = 1,
 			content = "";
