@@ -40,7 +40,7 @@ define(function(require, exports) {
 		if ($(btn).next().attr("class") == "zclip") return false;
 
 		var path = require.resolve("../util/copy/copy");
-		var _path = path.split("js/")[0] + 'js/res/copy.swf';
+		var _path = path.split("lib/")[0] + '/res/copy.swf';
 		//初始化
 		require.async("../util/copy/copy", function() {
 			$(btn).zclip({

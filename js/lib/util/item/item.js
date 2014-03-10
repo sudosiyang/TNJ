@@ -34,7 +34,7 @@ define(function(require, exports) {
 			temp += stringCat("<div class='col%% t-l'><%=%% %></div>", index++, i);
 		});
 		$(parent).append("<div class='m-item m-hd'>" + header + "</div><div class='m-content'></div>");
-		temp = "<div class='m-item m-con'>" + temp + "</div>"
+		temp = "<div class='m-item m-con'>" + temp + "</div>";
 		if (!per_item) {
 			$.each(data, function(i, val) {
 				content += parseTpl(temp, val);
@@ -57,7 +57,7 @@ define(function(require, exports) {
 					selectChange: function() {
 						getPerData(this.current);
 					}
-				})
+				});
 			});
 		}
 	}
@@ -68,7 +68,7 @@ define(function(require, exports) {
 		for (var i = (page - 1) * per_item; i < page * per_item; i++) {
 			if (data[i])
 				t += parseTpl(temp, data[i]);
-		};
+		}
 		$(parent).find(".m-content").empty().append(t);
 	}
 
@@ -102,7 +102,7 @@ define(function(require, exports) {
 		return str.replace(/%%/g, function() {
 			i++;
 			return arg[i];
-		})
+		});
 	}
 	exports.init = init;
 });
