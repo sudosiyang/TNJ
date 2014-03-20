@@ -61,6 +61,13 @@ define(function(require, exports) {
 		total=data;
 		drawLink();
 	}
+
+	function current(num){
+		current=num;
+		API.current=num;
+		drawLink();
+	}
+
 	function linkClick() {
 		$("body").on('click', parent+' .autoPager a', function(event) {
 			event.preventDefault();
@@ -142,5 +149,6 @@ define(function(require, exports) {
 	}
 	exports.init = init;
 	exports.render=render;
+	exports.current=current;
 
 });

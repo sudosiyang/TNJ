@@ -31,8 +31,8 @@ define(function(require, exports) {
 			API.value = _value;
 			$(__target).find('.__view').attr("data-value", _value).find(".__item").text(_text).parent().find("li").removeClass();
 			$(this).addClass('__select').parent().slideUp();
-
-			__onChange.call(API);
+			if ($.type(__onChange) == "function")
+				__onChange.call(API);
 
 		}).on("click", ".__item,b", function() {
 			var _this = $(this).parent().find("ul");
@@ -41,10 +41,23 @@ define(function(require, exports) {
 					_this.parent().focus();
 				}
 			});
-		}).on("focusout",".__view" ,function() {
+		}).on("focusout", ".__view", function() {
 			//失焦列表回弹
 			$(__target).find("ul").slideUp();
 		})
+	}
+
+	function setIndex(idx) {
+		var i = 0;
+		$.each(__dataSource, function(index, val) {
+			if (i == idx) {
+				$(__target).find('.__view').attr("data-value", val).find(".__item").text(index);
+				API.value = val;
+			}
+			i++;
+		});
+		if ($.type(__onChange) == "function")
+			__onChange.call(API);
 	}
 	var API = (function() {
 		return {
@@ -53,4 +66,5 @@ define(function(require, exports) {
 	})();
 
 	exports.init = init;
+	exports.setIndex = setIndex;
 })
