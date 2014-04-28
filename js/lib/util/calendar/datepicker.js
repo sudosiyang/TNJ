@@ -484,7 +484,7 @@ define(function(require) {
 						var tblEl = parentEl.parent().parent().parent();
 						var tblIndex = $('table', this).index(tblEl.get(0)) - 1;
 						var tmp = new Date(options.current);
-						var changed = false;
+						var changed = false,monthed=true;
 						var fillIt = false;
 						if (parentEl.is('th')) {
 							if (parentEl.hasClass('datepickerWeek') && options.mode == 'range' && !parentEl.next().hasClass('datepickerDisabled')) {
@@ -516,7 +516,9 @@ define(function(require) {
 										tblEl.get(0).className = 'datepickerViewDays';
 										el.find('span').text(formatDate(tmp, 'B, Y'));
 										break;
+									
 								}
+								monthed=true;
 							} else if (parentEl.parent().parent().is('thead')) {
 								switch (tblEl.get(0).className) {
 									case 'datepickerViewDays':
@@ -530,6 +532,7 @@ define(function(require) {
 										break;
 								}
 								fillIt = true;
+								monthed=true;
 							}
 						} else if (parentEl.is('td') && !parentEl.hasClass('datepickerDisabled')) {
 							switch (tblEl.get(0).className) {
@@ -538,10 +541,12 @@ define(function(require) {
 									options.current.setFullYear(parseInt(tblEl.find('thead th.datepickerMonth span').text(), 10));
 									options.current.addMonths(Math.floor(options.calendars / 2) - tblIndex);
 									tblEl.get(0).className = 'datepickerViewDays';
+									monthed=false;
 									break;
 								case 'datepickerViewYears':
 									options.current.setFullYear(parseInt(el.text(), 10));
 									tblEl.get(0).className = 'datepickerViewMonths';
+									monthed=false;
 									break;
 								default:
 									var val = parseInt(el.text(), 10);
@@ -582,6 +587,7 @@ define(function(require) {
 											break;
 									}
 									break;
+									monthed=true;
 							}
 							fillIt = true;
 							changed = true;
@@ -589,7 +595,7 @@ define(function(require) {
 						if (fillIt) {
 							fill(this);
 						}
-						if (changed) {
+						if (changed&&monthed) {
 							options.onChange.apply(this, prepareDate(options));
 						}
 					}
